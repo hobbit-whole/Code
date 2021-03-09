@@ -4,9 +4,9 @@ if __name__ == "__main__":
     players = constants.PLAYERS
     teams = constants.TEAMS
 
-    player_info = []  
+    player_info = []
+    
     def unpack_players_dic():
-        
         for player in players:
             player_info.append(player)
 
@@ -21,7 +21,3 @@ if __name__ == "__main__":
                     else:
                         v.replace('NO', 'False')
                         v = bool(v)
-            
-            
-
-        unpack_players_dic()
