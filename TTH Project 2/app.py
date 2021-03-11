@@ -59,22 +59,22 @@ def teams():
 
 def random_sort(roster, team):
     team_roster = defaultdict(list)
+    max_team_people = int(len(player_info)/len(team_info))
 
     for j in range(0,len(team)):
         team_roster[j].append(team[j])
-        for i in range(0,len(roster)):
-            team_roster[j].append(roster[i])
+
+        for _ in range(0,max_team_people):
+            team_roster[j].append(random.choices(roster))
+
     print(team_roster)
-                
-    #print(indie)
-    #print(team[j])
-    #print(indie)
 
 
 name = unpack_player_name()
 height = unpack_player_height()
 value = unpack_player_experience()
 roster = create_dict(name, height, value)
-
 team = teams()
+
 random_sort(roster, team)
+
